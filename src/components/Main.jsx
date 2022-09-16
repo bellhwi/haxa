@@ -10,9 +10,7 @@ import 'swiper/css/navigation'
 
 function Main({ page, title, desc, swiper }) {
   const navigate = useNavigate()
-
   const data = useSelector((state) => state.data)
-
   const filteredData = data.filter((item) => {
     return item.category == page.toLowerCase()
   })

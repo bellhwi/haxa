@@ -57,6 +57,7 @@ function Edit() {
   }
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
   function getTime() {
     const today = new Date()
     const monthNames = [
@@ -82,6 +83,7 @@ function Edit() {
 
     return date + ' @ ' + today.timeNow()
   }
+
   function updatePhoto() {
     uploadBytes(
       ref(storage, updatedInfoObj['pid']),
@@ -94,6 +96,7 @@ function Edit() {
         .then(() => (window.location.href = '/admin'))
     })
   }
+
   function updateProduct() {
     setShowAlert(true)
     dispatch(setLastUpdatedTime(getTime()))
@@ -117,6 +120,7 @@ function Edit() {
         isPhotoChanged ? updatePhoto() : (window.location.href = '/admin')
       })
   }
+
   function deleteProduct() {
     const text = 'Are you sure you want to delete this product?'
 

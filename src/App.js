@@ -1,17 +1,9 @@
 import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { db } from './firebase'
-import {
-  collection,
-  getDocs,
-  getDoc,
-  doc,
-  setDoc,
-  updateDoc,
-} from 'firebase/firestore'
+import { collection, getDocs, getDoc, doc } from 'firebase/firestore'
 import { useDispatch, useSelector } from 'react-redux'
 import { setData, setLastUpdatedTime } from './store'
-import { items } from './items'
 import Home from './pages/Home'
 import Clones from './pages/Clones'
 import Premiums from './pages/Premiums'
@@ -26,6 +18,7 @@ import Add from './pages/Add'
 function App() {
   const dispatch = useDispatch()
   const lastUpdatedTime = useSelector((state) => state.lastUpdatedTime)
+
   async function getAllDocs() {
     const fetchDocs = new Promise((res, rej) => {
       res(getDocs(collection(db, 'products')))
@@ -59,12 +52,6 @@ function App() {
     getDoc(doc(db, 'last-updated', 'updated')).then((docSnap) => {
       dispatch(setLastUpdatedTime(docSnap.data().time))
     })
-
-    // items.forEach((item, i) => {
-    //   setDoc(doc(db, 'products', item['name']), item)
-    // })
-
-    // console.log('hello')
   }, [])
 
   useEffect(() => {

@@ -19,6 +19,7 @@ function Navbar() {
   document.addEventListener('touchstart', (e) => {
     hideMenuBar(e)
   })
+
   return (
     <nav className='navbar'>
       <div className='navbar-logo'>

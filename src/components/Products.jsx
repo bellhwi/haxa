@@ -4,7 +4,6 @@ import Item from '../components/Item'
 import { useSelector, useDispatch } from 'react-redux'
 import { setData, setFilter, setFilteredItem } from '../store'
 import { GrPowerReset } from 'react-icons/gr'
-import { BsChevronDown } from 'react-icons/bs'
 
 function Products({ page }) {
   const data = useSelector((state) => state.data)
@@ -16,11 +15,13 @@ function Products({ page }) {
   const [selectedFilter, setSelectedFilter] = useState('')
   const select = useRef(null)
   const dispatch = useDispatch()
+
   function toPascalCase(str) {
     return (' ' + str).toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => {
       return chr.toUpperCase()
     })
   }
+
   function sortProducts() {
     let dataCopy = [...data]
     if (select.current.value == 'lowToHigh') {
@@ -81,6 +82,7 @@ function Products({ page }) {
     selectedFilter != null && selectedFilter.classList.remove('filter-selected')
     dispatch(setFilteredItem(''))
   }
+
   useEffect(() => {
     setFilterInfo(filteredData)
     dispatch(setFilteredItem([]))
@@ -146,8 +148,6 @@ function Products({ page }) {
         >
           <option value='latest'>Sort by latest</option>
           <option value='popularity'>Sort by popularity</option>
-          {/* <option value='lowToHigh'>Sort by price : low to high</option>
-          <option value='highToLow'>Sort by price : high to low</option> */}
         </select>
       </div>
 

@@ -12,6 +12,7 @@ function Seeds() {
     window.scrollTo(0, 0)
     document.title = 'Seeds - HAXA'
   }, [])
+
   return (
     <div className='bg-seeds'>
       <div className='container'>
@@ -22,7 +23,6 @@ function Seeds() {
           btnSecondaryText={btnSecondaryText}
         />
         <Products page={page} />
-
         <Footer />
       </div>
     </div>

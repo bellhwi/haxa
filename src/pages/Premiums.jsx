@@ -12,6 +12,7 @@ function Premiums() {
     window.scrollTo(0, 0)
     document.title = 'Premiums - HAXA'
   }, [])
+
   return (
     <div className='bg-premiums'>
       <div className='container'>
@@ -22,7 +23,6 @@ function Premiums() {
           btnSecondaryText={btnSecondaryText}
         />
         <Products page={page} />
-
         <Footer />
       </div>
     </div>

@@ -43,6 +43,7 @@ function Add() {
   }
   const navigate = useNavigate()
   const dispatch = useDispatch()
+
   function getTime() {
     const today = new Date()
     const date =
@@ -53,6 +54,7 @@ function Add() {
 
     return dateTime
   }
+
   function updatePhoto() {
     const storage = getStorage()
     const fileName = Date.now().toString()
@@ -71,6 +73,7 @@ function Add() {
       }
     )
   }
+
   function addProduct() {
     setShowAlert(true)
     dispatch(setLastUpdatedTime(getTime()))
@@ -91,6 +94,7 @@ function Add() {
       )
       .then(updatePhoto())
   }
+
   useEffect(() => {
     document.title = 'Add - Admin'
     const headerElement = document.querySelector('.header')

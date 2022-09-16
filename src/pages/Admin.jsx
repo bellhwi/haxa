@@ -13,12 +13,10 @@ function Admin() {
   const filteredData = data.filter((item) => {
     return item.name.includes(searchName)
   })
-
   const navigate = useNavigate()
 
   useEffect(() => {
     document.title = 'Admin - HAXA'
-
     sessionStorage.getItem('accessibleToAdmin') !== null
       ? setIsAccessibleToAdmin(true)
       : setIsAccessibleToAdmin(false)

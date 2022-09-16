@@ -11,6 +11,7 @@ function Detail() {
     return item.name == name
   })
   const navigate = useNavigate()
+
   function toPascalCase(str) {
     return (' ' + str).toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => {
       return chr.toUpperCase()
