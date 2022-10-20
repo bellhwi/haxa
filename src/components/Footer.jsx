@@ -11,17 +11,13 @@ function Footer({ color, padding }) {
   return (
     <div className='footer' style={{ padding: padding }}>
       <div className='footer-sns'>
-        <a style={{ color: color }} href='#' target='_blank' rel='noreferrer'>
-          <FaInstagram style={{ userSelect: 'none' }} />
-        </a>
         <a
           style={{ color: color }}
-          onClick={() => alert('haxa-official@gmail.com')}
+          href='https://www.instagram.com/haxalabs/'
+          target='_blank'
+          rel='noreferrer'
         >
-          <FaRegEnvelope style={{ userSelect: 'none' }} />
-        </a>
-        <a style={{ color: color }} onClick={() => alert('012-345-6789')}>
-          <BsTelephone style={{ userSelect: 'none' }} />
+          <FaInstagram style={{ userSelect: 'none' }} />
         </a>
       </div>
 

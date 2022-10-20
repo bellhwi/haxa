@@ -98,11 +98,16 @@ function Detail() {
                   <h3>Description</h3>
                   <p>{product.desc}</p>
                 </div>
-                <div className='product-btn'>
-                  <button className='btn-primary' onClick={() => navigate(-1)}>
-                    BACK
-                  </button>
-                </div>
+                <span
+                  style={{
+                    display: 'block',
+                    cursor: 'pointer',
+                    marginTop: '24px',
+                  }}
+                  onClick={() => navigate(-1)}
+                >
+                  &lt; Back
+                </span>
               </div>
             </div>
           </div>

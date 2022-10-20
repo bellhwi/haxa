@@ -45,11 +45,6 @@ function Navbar() {
             </NavLink>
           )
         })}
-        <Link to='/inventory'>
-          <button className='btn-secondary btn-inventory'>
-            <h4>INVENTORY</h4>
-          </button>
-        </Link>
       </ul>
       <div className='mobile-menu'>
         <button
@@ -61,26 +56,21 @@ function Navbar() {
           <AiOutlineMenu style={{ pointerEvents: 'none' }} /> <span>Menu</span>
         </button>
         <div className={`menu-container ${sideMenuBar}`}>
-          {['clones', 'premiums', 'seeds', 'coming', 'inventory'].map(
-            (link, index) => {
-              return (
-                <Link className='menu-link' to={`/${link}`} key={index}>
-                  {
-                    [
-                      <RiPlantLine />,
-                      <TbPlant2 />,
-                      <TbSeeding />,
-                      <RiTimerLine />,
-                      <MdOutlineInventory2 />,
-                    ][index]
-                  }
-                  <h4>
-                    {link == 'coming' ? 'COMING SOON' : link.toUpperCase()}
-                  </h4>
-                </Link>
-              )
-            }
-          )}
+          {['clones', 'premiums', 'seeds', 'coming'].map((link, index) => {
+            return (
+              <Link className='menu-link' to={`/${link}`} key={index}>
+                {
+                  [
+                    <RiPlantLine />,
+                    <TbPlant2 />,
+                    <TbSeeding />,
+                    <RiTimerLine />,
+                  ][index]
+                }
+                <h4>{link == 'coming' ? 'COMING SOON' : link.toUpperCase()}</h4>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </nav>

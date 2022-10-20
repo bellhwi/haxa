@@ -6,7 +6,7 @@ import LockScreen from '../components/LockScreen'
 import { homeContents, headerContents } from '../contents'
 
 function Home() {
-  const { page, title, desc } = headerContents[0]
+  const { page, title, desc, btnSecondaryText } = headerContents[0]
   const [isAccessibleToHome, setIsAccessibleToHome] = useState(false)
 
   useEffect(() => {
@@ -22,7 +22,12 @@ function Home() {
       {isAccessibleToHome ? (
         <div className='bg-home'>
           <div className='container'>
-            <Header page={page} title={title} desc={desc} />
+            <Header
+              page={page}
+              title={title}
+              desc={desc}
+              btnSecondaryText={btnSecondaryText}
+            />
             <div id='main'>
               {homeContents.map((content, index) => {
                 return (
