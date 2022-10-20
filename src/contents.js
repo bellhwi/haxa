@@ -2,7 +2,7 @@ const homeContents = [
   {
     page: 'clones',
     title: 'Featured Clones',
-    desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+    desc: "Explore our flagship genetics with breeder's choice.",
     swiper: true,
     imgURLs: [
       'img/bg.jpg',
@@ -40,10 +40,10 @@ const headerContents = [
     page: 'home',
     title: (
       <>
-        Lorem <span>ipsum</span> dolor sit amet.
+        Meet our <span>Authentic</span> genetics
       </>
     ),
-    desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum beatae a natus accusantium omnis cumque maxime!',
+    desc: 'We are committed to provide high-quality genetics. Our mission is to offer genuine representations of smell and flavor with the best cannabis.',
     btnPrimaryText: 'LEARN MORE',
     btnSecondaryText: 'VIEW REAL-TIME INVENTORY',
   },
