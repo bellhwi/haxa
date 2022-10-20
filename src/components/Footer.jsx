@@ -11,12 +11,7 @@ function Footer({ color, padding }) {
   return (
     <div className='footer' style={{ padding: padding }}>
       <div className='footer-sns'>
-        <a
-          style={{ color: color }}
-          href='https://www.instagram.com/haxalabs'
-          target='_blank'
-          rel='noreferrer'
-        >
+        <a style={{ color: color }} href='#' target='_blank' rel='noreferrer'>
           <FaInstagram style={{ userSelect: 'none' }} />
         </a>
         <a
