@@ -1132,8 +1132,8 @@ button:not(.menu-btn):hover:before,
     transform: scale(0.9);
   }
   .product-img {
-    width: 40%;
-    max-width: 200px;
+    width: 80%;
+    max-width: 240px;
   }
   .product-info {
     width: 100%;
