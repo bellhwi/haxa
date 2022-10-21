@@ -1,13 +1,22 @@
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Products from '../components/Products'
 import { headerContents } from '../contents'
+import { getAuth } from 'firebase/auth'
 
 function Clones() {
+  const navigate = useNavigate()
+  const auth = getAuth()
+
   useEffect(() => {
-    window.scrollTo(0, 0)
-    document.title = 'Clones - HAXA'
+    if (auth.currentUser != null) {
+      window.scrollTo(0, 0)
+      document.title = 'Clones - HAXA'
+    } else {
+      navigate('/')
+    }
   }, [])
 
   const { page, title, desc, btnPrimaryText, btnSecondaryText } =

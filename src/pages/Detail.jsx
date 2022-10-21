@@ -18,10 +18,28 @@ function Detail() {
     })
   }
 
+  function adjustHeight() {
+    const containerElement = document.querySelector('.container')
+    const headerElement = document.querySelector('.header')
+
+    containerElement.style.minHeight = `${document.documentElement.clientHeight}px`
+    headerElement.style.minHeight = `${document.documentElement.clientHeight}px`
+
+    if (document.documentElement.clientWidth <= 768) {
+      if (!document.querySelector('.navbar-logo').classList.contains('none')) {
+        document.querySelector('.navbar-logo').classList.add('none')
+      }
+    } else {
+      if (document.querySelector('.navbar-logo').classList.contains('none')) {
+        document.querySelector('.navbar-logo').classList.remove('none')
+      }
+    }
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0)
-    const headerElement = document.querySelector('.header')
-    headerElement.style.minHeight = `${document.documentElement.clientHeight}px`
+    adjustHeight()
+    window.addEventListener('resize', adjustHeight)
   }, [])
 
   return (
@@ -36,7 +54,7 @@ function Detail() {
             <div className='product'>
               <div className='product-img'>
                 <img src={product.url} />
-                <span class='product-back' onClick={() => navigate(-1)}>
+                <span className='product-back' onClick={() => navigate(-1)}>
                   &lt; Back
                 </span>
               </div>

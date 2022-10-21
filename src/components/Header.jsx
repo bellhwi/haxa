@@ -6,16 +6,20 @@ import Navbar from './Navbar'
 function Header({ page, title, desc, btnPrimaryText, btnSecondaryText }) {
   const ScrollLink = Scroll.Link
   const navigate = useNavigate()
-
-  useEffect(() => {
+  function adjustHeight() {
     const headerElement = document.querySelector('.header')
 
     // Show different height of header screen per pages
     page == 'home'
       ? (headerElement.style.minHeight = `${
-          document.documentElement.clientHeight * 0.8
+          document.documentElement.clientHeight * 0.9
         }px`)
       : (headerElement.style.minHeight = `${document.documentElement.clientHeight}px`)
+  }
+
+  useEffect(() => {
+    adjustHeight()
+    window.addEventListener('resize', adjustHeight)
   }, [])
 
   return (

@@ -5,7 +5,7 @@ import { RiPlantLine, RiTimerLine } from 'react-icons/ri'
 import { TbPlant2, TbSeeding } from 'react-icons/tb'
 import { getAuth, signOut } from 'firebase/auth'
 
-function Navbar() {
+function Navbar({ hideLogo }) {
   const [sideMenuBar, setSideMenuBar] = useState('')
   const navigate = useNavigate()
   const auth = getAuth()
@@ -22,8 +22,6 @@ function Navbar() {
   document.addEventListener('touchstart', (e) => {
     hideMenuBar(e)
   })
-
-  console.log(auth.currentUser)
 
   return (
     <nav className='navbar'>

@@ -25,10 +25,10 @@ $error-color: #e74c3c;
   background-color: $background-color;
   border: $border;
   border-radius: 2px;
-  letter-spacing: 1px;
   font-size: 14px;
   margin: 0 20px 20px 0;
   box-shadow: 0 0 8px $shadow-color;
+  letter-spacing: 1px;
 }
 
 @mixin grid($col) {
@@ -146,7 +146,7 @@ button:not(.menu-btn),
   top: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  height: 600px;
+  padding: 28px 0px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -197,6 +197,13 @@ button:not(.menu-btn),
   color: $error-color;
 }
 
+.login-error {
+  display: none;
+  font-size: 14px;
+  text-align: center;
+  color: $error-color;
+}
+
 .edit-btn.btn-disabled {
   pointer-events: none;
   background-color: $dark-gray;
@@ -225,6 +232,7 @@ button:not(.menu-btn),
   width: 80%;
   max-width: $max-width;
   margin: 0px auto;
+  overflow: hidden;
 }
 
 .bg-signup::before {
@@ -233,7 +241,7 @@ button:not(.menu-btn),
 
 .bg-home::before {
   @include bg('/public/img/bg.jpg', 50%);
-  height: 80%;
+  height: 90%;
 }
 
 .bg-clones::before {
@@ -438,10 +446,12 @@ button:not(.menu-btn),
   position: absolute;
   right: 0;
   top: 0;
-  color: $light-gray;
+  color: $dark-gray;
 }
 
 .navbar-user-greeting {
+  display: flex;
+  align-items: center;
   font-size: 12px;
   padding: 32px 14px;
 
@@ -476,7 +486,6 @@ button:not(.menu-btn),
 .navbar-link h4 {
   display: inline-block;
   font-size: 14px;
-  letter-spacing: 0.5px;
   padding: 0 14px;
   transition: all 0.2s;
 }
@@ -491,7 +500,7 @@ button:not(.menu-btn),
 
 .hero-title {
   font-size: 62px;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 
   span {
     color: $primary-color;
@@ -499,7 +508,7 @@ button:not(.menu-btn),
 }
 
 .hero-desc {
-  padding: 32px 0 96px;
+  padding: 32px 0 62px;
   line-height: 26px;
   width: 80%;
   margin: auto;
@@ -513,7 +522,6 @@ button:not(.menu-btn),
 
 .main-title {
   font-size: 22px;
-  letter-spacing: 0.5px;
 }
 
 .main-desc {
@@ -690,11 +698,9 @@ button:not(.menu-btn),
 
 .product-title {
   padding-top: 18px;
-  letter-spacing: 1px;
 }
 
 .product-price {
-  letter-spacing: 0.5px;
   padding-top: 12px;
   color: $primary-color;
 }
@@ -762,14 +768,12 @@ button:not(.menu-btn),
 
 .inventory-title {
   font-size: 48px;
-  letter-spacing: 2px;
   color: #fff;
   padding: 78px 0 36px;
   text-align: center;
 }
 
 .inventory-time {
-  letter-spacing: 0.5px;
   color: #fff;
 
   span {
@@ -811,7 +815,6 @@ button:not(.menu-btn),
   right: 0;
   color: #fff;
   font-size: 14px;
-  letter-spacing: 0.5px;
   background-color: $secondary-color;
   box-shadow: $secondary-color 0px 0px 10px;
   padding: 12px 0;
@@ -979,6 +982,10 @@ button:not(.menu-btn),
   display: block;
 }
 
+.none {
+  display: none;
+}
+
 .fade-in {
   opacity: 1;
 }
@@ -994,6 +1001,11 @@ button:not(.menu-btn),
     display: none;
   }
 
+  .navbar-logo {
+    width: 80px;
+    padding-top: 12px;
+  }
+
   .mobile-menu {
     position: absolute;
     top: 100%;
@@ -1002,7 +1014,7 @@ button:not(.menu-btn),
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding-top: 14px;
+    padding-top: 8px;
     font-size: 11px;
     overflow: hidden;
     z-index: 10;
@@ -1046,7 +1058,6 @@ button:not(.menu-btn),
       display: inline-block;
       font-size: 11px;
       padding-left: 6px;
-      letter-spacing: 0.5px;
     }
   }
 
@@ -1076,23 +1087,20 @@ button:not(.menu-btn),
     padding: 0px;
   }
 
-  .hero {
-    text-align: left;
+  .navbar-user-greeting {
+    padding: 18px 0px;
   }
 
   .hero-title {
-    font-size: 32px;
-    letter-spacing: 2px;
-
-    span {
-      color: $primary-color;
-    }
+    font-size: 54px;
+    padding-top: 12px;
   }
 
   .hero-desc {
     font-size: 14px;
     padding: 32px 0 72px;
-    margin: 0px;
+    width: 100%;
+    text-align: left;
   }
 
   .products-container.grid-4 {
@@ -1170,7 +1178,6 @@ button:not(.menu-btn),
 
   .inventory-title {
     font-size: 34px;
-    letter-spacing: 2px;
     padding: 78px 0 28px;
   }
 
@@ -1197,5 +1204,13 @@ button:not(.menu-btn),
 
   .admin-products .grid-5 {
     @include grid(3);
+  }
+
+  @media only screen and (max-width: 576px) {
+    .hero-desc {
+      font-size: 12px;
+      line-height: 20px;
+      padding: 32px 0px 52px;
+    }
   }
 }

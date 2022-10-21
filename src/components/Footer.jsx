@@ -1,13 +1,16 @@
-import { FaInstagram, FaRegEnvelope, FaAngleUp } from 'react-icons/fa'
-import { BsTelephone } from 'react-icons/bs'
+import { FaInstagram, FaAngleUp } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import { getAuth } from 'firebase/auth'
+import { adminUid } from '../items'
 import * as Scroll from 'react-scroll'
 
 function Footer({ color, padding }) {
   const date = new Date()
   const scroll = Scroll.animateScroll
+  const auth = getAuth()
   const navigate = useNavigate()
   let year = date.getFullYear()
+
   return (
     <div className='footer' style={{ padding: padding }}>
       <div className='footer-sns'>
@@ -21,7 +24,15 @@ function Footer({ color, padding }) {
         </a>
       </div>
 
-      <small style={{ color: color }} onClick={() => navigate('/admin')}>
+      <small
+        style={{ color: color }}
+        onClick={() => {
+          if (auth.currentUser.uid == adminUid) {
+            console.log('correct')
+            navigate('/admin')
+          }
+        }}
+      >
         HAXA &copy; {year}{' '}
       </small>
       <div className='scroll-top' onClick={scroll.scrollToTop}>

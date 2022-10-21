@@ -1,17 +1,25 @@
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { getAuth } from 'firebase/auth'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Products from '../components/Products'
 import { headerContents } from '../contents'
 
 function Coming() {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-    document.title = 'Coming Soon - HAXA'
-  }, [])
-
   const { page, title, desc, btnPrimaryText, btnSecondaryText } =
     headerContents[4]
+  const auth = getAuth()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (auth.currentUser != null) {
+      window.scrollTo(0, 0)
+      document.title = 'Coming Soon - HAXA'
+    } else {
+      navigate('/')
+    }
+  }, [])
 
   return (
     <div className='bg-coming'>

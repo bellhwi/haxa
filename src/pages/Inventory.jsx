@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { getAuth } from 'firebase/auth'
 import { useSelector } from 'react-redux'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -10,9 +12,16 @@ function Inventory() {
     return item.name.includes(searchName)
   })
   const lastUpdatedTime = useSelector((state) => state.lastUpdatedTime)
+  const navigate = useNavigate()
+  const auth = getAuth()
 
   useEffect(() => {
-    document.title = 'Inventory - HAXA'
+    if (auth.currentUser != null) {
+      window.scrollTo(0, 0)
+      document.title = 'Inventory - HAXA'
+    } else {
+      navigate('/')
+    }
   }, [])
 
   return (

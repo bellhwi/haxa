@@ -1,12 +1,21 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import {
+  getAuth,
+  setPersistence,
+  browserSessionPersistence,
+  signInWithEmailAndPassword,
+} from 'firebase/auth'
 
 function Login() {
   const auth = getAuth()
   const navigate = useNavigate()
+  const [loginFailed, setLoginFailed] = useState(false)
 
   useEffect(() => {
+    document.title = 'Login - HAXA'
+
+    console.log(auth)
     if (auth.currentUser != null) {
       navigate('/home')
     }
@@ -48,7 +57,9 @@ function Login() {
             />
             <small>Error message</small>
           </div>
-
+          <p className={`login-error ${loginFailed ? 'block' : null}`}>
+            Invalid user information.
+          </p>
           <button
             className='form-button btn-secondary'
             onClick={() => {
@@ -57,19 +68,30 @@ function Login() {
                 document.getElementById('email').value,
                 document.getElementById('password').value
               )
-                .then((userCredential) => {
-                  // Signed in
-                  const user = userCredential.user
+                .then(() => {
+                  setPersistence(auth, browserSessionPersistence)
+                    .then(() => {
+                      return signInWithEmailAndPassword(
+                        auth,
+                        document.getElementById('email').value,
+                        document.getElementById('password').value
+                      )
+                    })
+                    .catch((error) => {
+                      const errorCode = error.code
+                      const errorMessage = error.message
 
-                  if (user != null) {
-                    navigate('/home')
-                  }
+                      console.log(errorCode, errorMessage)
+                    })
+                  setLoginFailed(false)
+                  navigate('/home')
                 })
                 .catch((error) => {
                   const errorCode = error.code
                   const errorMessage = error.message
 
                   console.log(errorCode, errorMessage)
+                  setLoginFailed(true)
                 })
             }}
           >

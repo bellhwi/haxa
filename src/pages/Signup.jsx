@@ -1,6 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from 'firebase/auth'
 
 function Signup() {
   const auth = getAuth()
@@ -126,6 +130,7 @@ function Signup() {
   }
 
   useEffect(() => {
+    document.title = 'Sign Up - HAXA'
     document.querySelector('.form-button').addEventListener('click', validate)
     if (auth.currentUser != null) {
       navigate('/home')
@@ -210,11 +215,19 @@ function Signup() {
                   document.getElementById('email').value,
                   document.getElementById('password').value
                 )
-                  .then((userCredential) => {
+                  .then(() => {
                     // Signed in
-                    const user = userCredential.user
-                    user.displayName = document.getElementById('username').value
-                    navigate('/home')
+                    updateProfile(auth.currentUser, {
+                      displayName: document.getElementById('username').value,
+                    })
+                      .then(() => {
+                        // Profile updated!
+                        navigate('/home')
+                      })
+                      .catch((error) => {
+                        // An error occurred
+                        console.log(error)
+                      })
                   })
                   .catch((error) => {
                     const errorCode = error.code

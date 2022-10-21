@@ -6,11 +6,13 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setLastUpdatedTime } from '../store'
 import { Oval } from 'react-loading-icons'
+import { getAuth } from 'firebase/auth'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import InputField from '../components/InputField'
 
 function Add() {
+  const auth = getAuth()
   const [updatedImgUrl, setUpdatedImgUrl] = useState(null)
   const [showAlert, setShowAlert] = useState(false)
   const [btnDisabled, setBtnDisabled] = useState('btn-disabled')
@@ -96,7 +98,12 @@ function Add() {
   }
 
   useEffect(() => {
-    document.title = 'Add - Admin'
+    if (auth.currentUser != null) {
+      window.scrollTo(0, 0)
+      document.title = 'Add - Admin'
+    } else {
+      navigate('/')
+    }
     const headerElement = document.querySelector('.header')
     headerElement.style.minHeight = `${document.documentElement.clientHeight}px`
   }, [])

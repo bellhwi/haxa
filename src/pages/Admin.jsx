@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { getAuth } from 'firebase/auth'
-import { adminUid } from '../items'
 import Navbar from '../components/Navbar'
 import Item from '../components/Item'
 import Footer from '../components/Footer'
@@ -15,16 +14,12 @@ function Admin() {
   })
   const navigate = useNavigate()
   const auth = getAuth()
-  const userUid = auth.currentUser.uid
 
   useEffect(() => {
-    if (auth != null) {
-      if (userUid != adminUid) {
-        navigate('/home')
-      }
-    } else {
+    if (auth == null) {
       navigate('/')
     }
+
     document.title = 'Admin - HAXA'
   }, [])
 
@@ -68,6 +63,7 @@ function Admin() {
                     return (
                       <Item
                         key={index}
+                        isAdminMode={true}
                         name={item.name}
                         color='#fff'
                         bgColor='#000'
