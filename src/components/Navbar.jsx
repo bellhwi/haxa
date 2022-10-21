@@ -1,12 +1,15 @@
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { RiPlantLine, RiTimerLine } from 'react-icons/ri'
 import { TbPlant2, TbSeeding } from 'react-icons/tb'
-import { MdOutlineInventory2 } from 'react-icons/md'
+import { getAuth, signOut } from 'firebase/auth'
 
 function Navbar() {
   const [sideMenuBar, setSideMenuBar] = useState('')
+  const navigate = useNavigate()
+  const auth = getAuth()
+
   function hideMenuBar(e) {
     if (e.target.className == 'menu-btn') return
 
@@ -20,10 +23,31 @@ function Navbar() {
     hideMenuBar(e)
   })
 
+  console.log(auth.currentUser)
+
   return (
     <nav className='navbar'>
+      <div className='navbar-user'>
+        <p className='navbar-user-greeting'>
+          Welcome,{' '}
+          {auth.currentUser != null ? auth.currentUser.displayName : null}!
+          <small
+            onClick={() => {
+              signOut(auth)
+                .then(() => {
+                  navigate('/')
+                })
+                .catch((error) => {
+                  console.log(error)
+                })
+            }}
+          >
+            Logout
+          </small>
+        </p>
+      </div>
       <div className='navbar-logo'>
-        <Link to='/'>
+        <Link to='/home'>
           <img
             src={`${process.env.PUBLIC_URL}/img/logo.png`}
             draggable='false'

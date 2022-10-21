@@ -1,5 +1,17 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 
+const user = createSlice({
+  name: 'user',
+  initialState: null,
+  reducers: {
+    setUser(state, action) {
+      return action.payload
+    },
+  },
+})
+
+export const { setUser } = user.actions
+
 const data = createSlice({
   name: 'data',
   initialState: [],
@@ -50,6 +62,7 @@ export const { setLastUpdatedTime } = lastUpdatedTime.actions
 
 export default configureStore({
   reducer: {
+    user: user.reducer,
     data: data.reducer,
     filteredItem: filteredItem.reducer,
     filter: filter.reducer,

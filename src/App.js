@@ -1,9 +1,12 @@
+import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { db } from './firebase'
 import { collection, getDocs, getDoc, doc } from 'firebase/firestore'
 import { useDispatch, useSelector } from 'react-redux'
 import { setData, setLastUpdatedTime } from './store'
+import Signup from './pages/Signup'
+import Login from './pages/Login'
 import Home from './pages/Home'
 import Clones from './pages/Clones'
 import Premiums from './pages/Premiums'
@@ -59,18 +62,27 @@ function App() {
   }, [lastUpdatedTime])
 
   return (
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/clones' element={<Clones />} />
-      <Route path='/premiums' element={<Premiums />} />
-      <Route path='/seeds' element={<Seeds />} />
-      <Route path='/coming' element={<Coming />} />
-      <Route path='/inventory' element={<Inventory />} />
-      <Route path='/product/:name' element={<Detail />} />
-      <Route path='/admin' element={<Admin />} />
-      <Route path='/admin/:name' element={<Edit />} />
-      <Route path='/admin/add' element={<Add />} />
-    </Routes>
+    <PayPalScriptProvider
+      options={{
+        'client-id':
+          'AdwGY2-UcsMXA-b71uHBfzJ2mLuCFhpwN97uDR1vZmW-4RKLL1qBE8xjKFnsKMuM0tRqND7z57pSHQtC',
+      }}
+    >
+      <Routes>
+        <Route path='/' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/clones' element={<Clones />} />
+        <Route path='/premiums' element={<Premiums />} />
+        <Route path='/seeds' element={<Seeds />} />
+        <Route path='/coming' element={<Coming />} />
+        <Route path='/inventory' element={<Inventory />} />
+        <Route path='/product/:name' element={<Detail />} />
+        <Route path='/admin' element={<Admin />} />
+        <Route path='/admin/:name' element={<Edit />} />
+        <Route path='/admin/add' element={<Add />} />
+      </Routes>
+    </PayPalScriptProvider>
   )
 }
 

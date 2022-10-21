@@ -40,7 +40,7 @@ const headerContents = [
     page: 'home',
     title: (
       <>
-        Meet our <span>authentic</span> strains
+        Meet our <span>Authentic</span> Strains
       </>
     ),
     desc: 'We are committed to provide high-quality genetics. Our mission is to offer genuine representations of smell and flavor with the best cannabis.',

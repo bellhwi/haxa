@@ -1,57 +1,52 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { homeContents, headerContents } from '../contents'
+import { getAuth } from 'firebase/auth'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
-import LockScreen from '../components/LockScreen'
-import { homeContents, headerContents } from '../contents'
 
 function Home() {
+  const navigate = useNavigate()
+  const auth = getAuth()
   const { page, title, desc, btnSecondaryText } = headerContents[0]
-  const [isAccessibleToHome, setIsAccessibleToHome] = useState(false)
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-    document.title = 'Home - HAXA'
-    sessionStorage.getItem('accessibleToHome') !== null
-      ? setIsAccessibleToHome(true)
-      : setIsAccessibleToHome(false)
+    if (auth.currentUser != null) {
+      window.scrollTo(0, 0)
+      document.title = 'Home - HAXA'
+    } else {
+      navigate('/')
+    }
   }, [])
 
   return (
     <div>
-      {isAccessibleToHome ? (
-        <div className='bg-home'>
-          <div className='container'>
-            <Header
-              page={page}
-              title={title}
-              desc={desc}
-              btnSecondaryText={btnSecondaryText}
-            />
-            <div id='main'>
-              {homeContents.map((content, index) => {
-                return (
-                  <Main
-                    key={index}
-                    page={content.page}
-                    title={content.title}
-                    desc={content.desc}
-                    swiper={content.swiper}
-                  />
-                )
-              })}
-            </div>
-
-            <Footer />
+      <div className='bg-home'>
+        <div className='container'>
+          <Header
+            page={page}
+            title={title}
+            desc={desc}
+            btnSecondaryText={btnSecondaryText}
+          />
+          <div id='main'>
+            {homeContents.map((content, index) => {
+              return (
+                <Main
+                  key={index}
+                  page={content.page}
+                  title={content.title}
+                  desc={content.desc}
+                  swiper={content.swiper}
+                />
+              )
+            })}
           </div>
+
+          <Footer />
         </div>
-      ) : (
-        <LockScreen
-          setIsAccessibleToHome={setIsAccessibleToHome}
-          placeholder='Enter the member code.'
-          errorMsg='Member code is not correct.'
-        />
-      )}
+      </div>
     </div>
   )
 }

@@ -1,8 +1,8 @@
+import { PayPalButtons } from '@paypal/react-paypal-js'
 import { useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 
 function Detail() {
   const { name } = useParams()
@@ -36,6 +36,9 @@ function Detail() {
             <div className='product'>
               <div className='product-img'>
                 <img src={product.url} />
+                <span class='product-back' onClick={() => navigate(-1)}>
+                  &lt; Back
+                </span>
               </div>
               <div className='product-info'>
                 <nav className='products-nav product-nav'>
@@ -98,20 +101,23 @@ function Detail() {
                   <h3>Description</h3>
                   <p>{product.desc}</p>
                 </div>
-                <span
-                  style={{
-                    display: 'block',
-                    cursor: 'pointer',
-                    marginTop: '24px',
+                <PayPalButtons
+                  style={{ layout: 'horizontal' }}
+                  createOrder={(data, actions) => {
+                    return actions.order.create({
+                      purchase_units: [
+                        {
+                          amount: {
+                            value: product.price,
+                          },
+                        },
+                      ],
+                    })
                   }}
-                  onClick={() => navigate(-1)}
-                >
-                  &lt; Back
-                </span>
+                />
               </div>
             </div>
           </div>
-          <Footer color='#fff' />
         </header>
       </div>
     </div>
