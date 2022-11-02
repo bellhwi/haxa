@@ -7,7 +7,6 @@ import * as Scroll from 'react-scroll'
 function Footer({ color, padding }) {
   const date = new Date()
   const scroll = Scroll.animateScroll
-  const auth = getAuth()
   const navigate = useNavigate()
   let year = date.getFullYear()
 
@@ -27,8 +26,8 @@ function Footer({ color, padding }) {
       <small
         style={{ color: color }}
         onClick={() => {
+          const auth = getAuth()
           if (auth.currentUser.uid == adminUid) {
-            console.log('correct')
             navigate('/admin')
           }
         }}

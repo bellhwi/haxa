@@ -15,7 +15,6 @@ function Login() {
   useEffect(() => {
     document.title = 'Login - HAXA'
 
-    console.log(auth)
     if (auth.currentUser != null) {
       navigate('/home')
     }
@@ -24,10 +23,7 @@ function Login() {
     <div className='bg-signup'>
       <div className='form-container'>
         <div>
-          <div
-            className='navbar-logo'
-            style={{ margin: 'auto', paddingBottom: '24px' }}
-          >
+          <div className='navbar-logo'>
             <img
               src={`${process.env.PUBLIC_URL}/img/logo.png`}
               draggable='false'
@@ -71,11 +67,7 @@ function Login() {
                 .then(() => {
                   setPersistence(auth, browserSessionPersistence)
                     .then(() => {
-                      return signInWithEmailAndPassword(
-                        auth,
-                        document.getElementById('email').value,
-                        document.getElementById('password').value
-                      )
+                      console.log('Set Persistence Success')
                     })
                     .catch((error) => {
                       const errorCode = error.code

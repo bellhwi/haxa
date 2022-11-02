@@ -18,13 +18,7 @@ const homeContents = [
     title: 'Trending Now',
     desc: 'Experience our most compelling premiums in the industry.',
     swiper: false,
-    imgURLs: [
-      'img/bg.jpg',
-      'img/bg.jpg',
-      'img/bg.jpg',
-      'img/bg.jpg',
-      'img/bg.jpg',
-    ],
+    imgURLs: ['img/bg.jpg', 'img/bg.jpg', 'img/bg.jpg', 'img/bg.jpg'],
   },
   {
     page: 'seeds',

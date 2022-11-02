@@ -96,7 +96,7 @@ function Main({ page, title, desc, swiper }) {
           </div>
         ) : (
           <div className='main-grid'>
-            <div className='grid-3'>
+            <div className='grid-3 grid-seed'>
               {filteredData.slice(0, 3).map((item, index) => {
                 return (
                   <Item

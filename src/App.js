@@ -40,6 +40,10 @@ function App() {
   }
 
   useEffect(() => {
+    getAllDocs()
+  }, [lastUpdatedTime])
+
+  useEffect(() => {
     Date.prototype.timeNow = function () {
       const time =
         (this.getHours() < 10 ? '0' : '') +
@@ -56,10 +60,6 @@ function App() {
       dispatch(setLastUpdatedTime(docSnap.data().time))
     })
   }, [])
-
-  useEffect(() => {
-    getAllDocs()
-  }, [lastUpdatedTime])
 
   return (
     <PayPalScriptProvider

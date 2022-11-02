@@ -141,10 +141,7 @@ function Signup() {
     <div className='bg-signup'>
       <div className='form-container'>
         <div>
-          <div
-            className='navbar-logo'
-            style={{ margin: 'auto', paddingBottom: '24px' }}
-          >
+          <div className='navbar-logo'>
             <img
               src={`${process.env.PUBLIC_URL}/img/logo.png`}
               draggable='false'
@@ -157,7 +154,7 @@ function Signup() {
             <input
               className='form-input'
               id='username'
-              type='username'
+              type='text'
               placeholder='Enter username'
             />
             <small>Error message</small>

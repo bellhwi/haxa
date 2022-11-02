@@ -232,8 +232,6 @@ function Add() {
               </div>
             </div>
           </form>
-
-          <Footer color='#d3d3d3' padding='24px' />
         </header>
       </div>
     </div>
