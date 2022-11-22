@@ -27,7 +27,10 @@ function Footer({ color, padding }) {
         style={{ color: color }}
         onClick={() => {
           const auth = getAuth()
-          if (auth.currentUser.uid == adminUid || testerUid) {
+          if (
+            auth.currentUser.uid == adminUid ||
+            auth.currentUser.uid == testerUid
+          ) {
             navigate('/admin')
           }
         }}
