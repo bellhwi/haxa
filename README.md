@@ -1,24 +1,20 @@
-<h1 align="center">Haxa</h1>
-<h3 align="center">Haxa is an eCommerce website that is outsourced from my client 🌱</h3>
+# Haxa
+
+> [Haxa](https://haxalabs.com/) is an eCommerce website that is outsourced from my client 🌱
+
 <p align="center"><img src="public/img/github-cover.png" width="75%"></p>
-<h6 align="center"><a href="https://haxalabs.com/">✨ VIEW LIVE WEBSITE
-</a></h6>
-<h6 align="center"><a href="https://haxalabs.com/">📄 VIEW DOCS
-</a></h6>
 
-**Features**
+## Features
 
-- 💎 eCommerce Freelance Project
+- 💎 Freelance project
+- 🧑🏻‍💻 User authentication
+- 🔍 Search product
+- 🧑🏻‍💼 Admin product management
+- 🎯 Filter / sort product
+- 💳 PayPal integration
+- ✨ Live inventory
 
-- 🧑🏻‍💻 User Authentication
-
-- 🧑🏻‍💼 Admin Products Management
-
-- 💳 PayPal Transaction
-
-- 🎯 Filter/Sort Products
-
-**Tech**
+## Tech
 
 <p align="left">
     <img
