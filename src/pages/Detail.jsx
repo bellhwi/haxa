@@ -18,8 +18,16 @@ function Detail() {
     })
   }
 
+  function adjustHeight() {
+    const headerElement = document.querySelector('.header')
+    headerElement.style.minHeight = `${
+      document.documentElement.clientHeight * 0.9
+    }px`
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0)
+    adjustHeight()
   }, [])
 
   return (

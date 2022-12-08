@@ -9,7 +9,7 @@ function Inventory() {
   const [searchName, setSearchName] = useState('')
   const data = useSelector((state) => state.data)
   const filteredData = data.filter((item) => {
-    return item.name.includes(searchName)
+    return item.title.toLowerCase().replace(/\s/g, '').includes(searchName)
   })
   const lastUpdatedTime = useSelector((state) => state.lastUpdatedTime)
   const navigate = useNavigate()
@@ -22,6 +22,8 @@ function Inventory() {
     } else {
       navigate('/')
     }
+
+    console.log(filteredData)
   }, [])
 
   return (
@@ -40,7 +42,9 @@ function Inventory() {
                   type='text'
                   placeholder='Search by the product name'
                   onChange={(e) => {
-                    setSearchName(e.target.value)
+                    setSearchName(
+                      e.target.value.toLowerCase().replace(/\s/g, '')
+                    )
                   }}
                 />
               </div>

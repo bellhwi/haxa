@@ -65,16 +65,14 @@ function Login() {
                 document.getElementById('password').value
               )
                 .then(() => {
-                  setPersistence(auth, browserSessionPersistence)
-                    .then(() => {
-                      console.log('Set Persistence Success')
-                    })
-                    .catch((error) => {
+                  setPersistence(auth, browserSessionPersistence).catch(
+                    (error) => {
                       const errorCode = error.code
                       const errorMessage = error.message
 
                       console.log(errorCode, errorMessage)
-                    })
+                    }
+                  )
                   setLoginFailed(false)
                   navigate('/home')
                 })
