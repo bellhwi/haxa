@@ -1,12 +1,18 @@
 # Haxa
 
-> [Haxa](https://haxalabs.com/) is an eCommerce website that is outsourced from my client 🌱
+> [Haxa](https://haxalabs.com/) is an eCommerce website that is outsourced from my client.
 
 <p align="center"><img src="public/img/github-cover.png" width="75%"></p>
 
+## Overview
+
+**How did I build it?** Haxa is the eCommerce project for my entrepreneur client. I closely communicated with my client to meet his visual and functional requirements. After discussion, I designed and developed an entire website and deployed it.
+
+**What is the stage of the project?** Work in progress(pending for the client's products update)
+
+
 ## Features
 
-- 💎 Freelance project
 - 🧑🏻‍💻 User authentication
 - 🔍 Search product
 - 🧑🏻‍💼 Admin product management
