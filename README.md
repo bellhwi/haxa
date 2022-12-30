@@ -31,11 +31,12 @@
 ## Features
 
 - 🧑🏻‍💼 Admin product management: [Example code](https://github.com/bellhwi/haxa/blob/main/src/pages/Edit.jsx)
-- 🧑🏻‍💻 User authentication: [Example code](https://github.com/bellhwi/haxa/blob/main/src/pages/Login.jsx)
+- 🧑🏻‍💻 User authentication: [Example code](https://github.com/bellhwi/haxa/blob/main/src/pages/Login.jsx#L61-L86)
 - 🎯 Filter / sort product: [Example code](https://github.com/bellhwi/haxa/blob/main/src/components/Products.jsx)
 - 💳 PayPal integration
 - 🔍 Search product
 - ✨ Live inventory
+- 📱 Responsive design
 
 ## Tech
 
