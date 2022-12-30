@@ -1,8 +1,10 @@
 # Haxa
 
-> [Haxa](https://haxalabs.com/) is an eCommerce website that is outsourced from my client.
+> eCommerce project built with React & Firebase for my entrepreneur client.
 
 <p align="center"><img src="public/img/github-cover.png" width="75%"></p>
+
+<p align="center">:pushpin: Admin page is accessible by clicking the copyright text at footer! (admin@example.com / 123456)</p>
 
 ## Overview
 
