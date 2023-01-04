@@ -13,7 +13,6 @@ import {
 import { Oval } from 'react-loading-icons'
 import { setLastUpdatedTime } from '../store'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import InputField from '../components/InputField'
 
 function Edit() {
