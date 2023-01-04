@@ -36,6 +36,7 @@
 - 💳 PayPal integration
 - 🔍 Search product
 - ✨ Live inventory
+- 📱 Responsive design
 
 ## Tech
 
