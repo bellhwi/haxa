@@ -30,9 +30,9 @@
 
 ## Features
 
-- 🧑🏻‍💼 Admin product management: [Example code](https://github.com/bellhwi/haxa/blob/main/src/pages/Edit.jsx)
+- 🧑🏻‍💼 Admin product management: [Example code](https://github.com/bellhwi/haxa/blob/main/src/pages/Edit.jsx#L86-L139)
 - 🧑🏻‍💻 User authentication: [Example code](https://github.com/bellhwi/haxa/blob/main/src/pages/Login.jsx#L61-L86)
-- 🎯 Filter / sort product: [Example code](https://github.com/bellhwi/haxa/blob/main/src/components/Products.jsx)
+- 🎯 Filter / sort product: [Example code](https://github.com/bellhwi/haxa/blob/main/src/components/Products.jsx#L25-L73)
 - 💳 PayPal integration
 - 🔍 Search product
 - ✨ Live inventory
