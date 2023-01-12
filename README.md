@@ -12,7 +12,7 @@
 
 - **What was the most challenging part?** I used Firebase database and storage for this project. I had to write code logics to fetch the products data. That code logic was being called every time I opened the products page. I found out that this number of fetching data causes quite a bit of loading delay. I had to solve this problem to make my website run faster. [See more on Google Docs](https://docs.google.com/document/d/1cCmYlvT7zN1VVJ4X7mH-5sxntNe4PvYZ5K1fgKZWyMg/edit).
 
-- **How did I solve it?** I used Redux and the ‘useEffect’ hook in React to optimize data fetching logic. It stores data in a state after the component is rendered initially. I set the last product update time as a dependency to fetch data only when there is a change made. In this way, I could improve the performance of my website.
+- **How did I solve it?** I used Redux and the `useEffect` hook in React to optimize data fetching logic. It stores data in a state after the component is rendered initially. I set the last product update time as a dependency to fetch data only when there is a change made. In this way, I could improve the performance of my website.
 
 - **What was the most fun part?** The most fun part was creating an admin page. It was my very first time implementing this feature with Firebase. I had to read the official document on Google Firebase to come up with code logics. I was surprised to see how the Firebase handles the data and makes it easy to apply backend to my web app. I enjoyed learning this new technology.
 
