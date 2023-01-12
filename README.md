@@ -4,21 +4,19 @@
 
 <p align="center"><img src="public/img/github-cover.png" width="75%"></p>
 
-<p align="center">:pushpin: Admin page is accessible by clicking the copyright text at footer! (admin@example.com / 123456)</p>
+<p align="center">📍 Admin page is accessible by clicking the copyright text at footer! (admin@example.com / 123456)</p>
 
 ## Overview
 
 - **How did I build it?** Haxa is the eCommerce project for my entrepreneur client. I closely communicated with my client to meet his visual and functional requirements. After discussion, I designed and developed an entire website and deployed it.
 
-- **What is the stage of the project?** Work in progress(pending for the client's products update)
-
 - **What was the most challenging part?** I used Firebase database and storage for this project. I had to write code logics to fetch the products data. That code logic was being called every time I opened the products page. I found out that this number of fetching data causes quite a bit of loading delay. I had to solve this problem to make my website run faster. [See more on Google Docs](https://docs.google.com/document/d/1cCmYlvT7zN1VVJ4X7mH-5sxntNe4PvYZ5K1fgKZWyMg/edit).
+
+- **How did I solve it?** I used Redux and the ‘useEffect’ hook in React to optimize data fetching logic. It stores data in a state after the component is rendered initially. I set the last product update time as a dependency to fetch data only when there is a change made. In this way, I could improve the performance of my website.
 
 - **What was the most fun part?** The most fun part was creating an admin page. It was my very first time implementing this feature with Firebase. I had to read the official document on Google Firebase to come up with code logics. I was surprised to see how the Firebase handles the data and makes it easy to apply backend to my web app. I enjoyed learning this new technology.
 
 - **What did I learn?** I learned how to build a full stack web app with the Firebase. It was significant achievement for me since it was my first website that is connected to the database. I learned how to integrate a PayPal payment with my app, as well. It was way more simple that I thought. It taught me that I shouldn't assume implementing new feature in the project is complicated. I learned that I should always be opened to face a new challenge and go over my comfort zone.
-
-- **How did I solve it?** I used Redux and the ‘useEffect’ hook in React to optimize data fetching logic. It stores data in a state after the component is rendered initially. I set the last product update time as a dependency to fetch data only when there is a change made. In this way, I could improve the performance of my website.
 
 - **What will I do differently next time?** I want to create a wireframe before starting to develop the website next time. At the early stage of the project, I didn't want to spend too much time coming up with design. I dived into the project with a very simple and vague design decision. I had no detailed visual blueprint of the completed project at all. It caused a lot of debating in terms of design during the development process. I had to spend way more time than I expected for this part. I overlooked the decision making of website design could be very time consuming overall the project. I'll definitely use design tools to create a detailed wireframe of the project next time.
 
