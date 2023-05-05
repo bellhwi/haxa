@@ -81,6 +81,7 @@ button:not(.menu-btn),
   overflow: hidden;
   font-family: "Open Sans", sans-serif;
   transition: all 0.2s linear 0s;
+  margin: auto;
 }
 button:not(.menu-btn):before,
 .edit-addPhoto:before {
@@ -599,7 +600,6 @@ button:not(.menu-btn):hover:before,
 .slide-container img {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   display: block;
   width: 100%;
@@ -1164,7 +1164,7 @@ button:not(.menu-btn):hover:before,
     padding-top: 26px;
   }
   .product-title,
-.product-price {
+  .product-price {
     padding: 0;
   }
   .product-title {
@@ -1225,7 +1225,7 @@ button:not(.menu-btn):hover:before,
     padding: 32px 0px 52px;
   }
   .grid-2,
-.grid-3 {
+  .grid-3 {
     gap: 4px;
   }
   .admin-products .grid-5 {
@@ -1261,7 +1261,7 @@ button:not(.menu-btn):hover:before,
     margin-left: 24px;
   }
   .admin,
-.input-search {
+  .input-search {
     width: 100%;
   }
 }/*# sourceMappingURL=App.css.map */

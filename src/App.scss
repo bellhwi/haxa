@@ -112,6 +112,7 @@ button:not(.menu-btn),
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
   transition: all 0.2s linear 0s;
+  margin: auto;
 
   &:before {
     content: '>';
