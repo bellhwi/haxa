@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { AiOutlineMenu } from 'react-icons/ai'
+import { AiOutlineMenu, AiOutlineInfoCircle } from 'react-icons/ai'
 import { RiPlantLine, RiTimerLine } from 'react-icons/ri'
 import { TbPlant2, TbSeeding } from 'react-icons/tb'
 import { getAuth, signOut } from 'firebase/auth'
@@ -54,19 +54,21 @@ function Navbar({ hideLogo }) {
       </div>
       <div style={{ flexGrow: 1 }}></div>
       <ul className='navbar-menu'>
-        {['clones', 'premiums', 'seeds', 'coming'].map((link, index) => {
-          return (
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? 'navbar-link active' : 'navbar-link'
-              }
-              to={`/${link}`}
-              key={index}
-            >
-              <h4>{link == 'coming' ? 'COMING SOON' : link.toUpperCase()}</h4>
-            </NavLink>
-          )
-        })}
+        {['about', 'clones', 'premiums', 'seeds', 'coming'].map(
+          (link, index) => {
+            return (
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'navbar-link active' : 'navbar-link'
+                }
+                to={`/${link}`}
+                key={index}
+              >
+                <h4>{link == 'coming' ? 'COMING SOON' : link.toUpperCase()}</h4>
+              </NavLink>
+            )
+          }
+        )}
       </ul>
       <div className='mobile-menu'>
         <button
@@ -78,21 +80,26 @@ function Navbar({ hideLogo }) {
           <AiOutlineMenu style={{ pointerEvents: 'none' }} /> <span>Menu</span>
         </button>
         <div className={`menu-container ${sideMenuBar}`}>
-          {['clones', 'premiums', 'seeds', 'coming'].map((link, index) => {
-            return (
-              <Link className='menu-link' to={`/${link}`} key={index}>
-                {
-                  [
-                    <RiPlantLine />,
-                    <TbPlant2 />,
-                    <TbSeeding />,
-                    <RiTimerLine />,
-                  ][index]
-                }
-                <h4>{link == 'coming' ? 'COMING SOON' : link.toUpperCase()}</h4>
-              </Link>
-            )
-          })}
+          {['about', 'clones', 'premiums', 'seeds', 'coming'].map(
+            (link, index) => {
+              return (
+                <Link className='menu-link' to={`/${link}`} key={index}>
+                  {
+                    [
+                      <AiOutlineInfoCircle />,
+                      <RiPlantLine />,
+                      <TbPlant2 />,
+                      <TbSeeding />,
+                      <RiTimerLine />,
+                    ][index]
+                  }
+                  <h4>
+                    {link == 'coming' ? 'COMING SOON' : link.toUpperCase()}
+                  </h4>
+                </Link>
+              )
+            }
+          )}
         </div>
       </div>
     </nav>

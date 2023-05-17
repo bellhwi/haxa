@@ -252,6 +252,17 @@ button:not(.menu-btn):hover:before,
   height: 90%;
 }
 
+.bg-about::before {
+  content: "";
+  background: url("/public/img/bg_about.jpg") center/cover no-repeat;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: brightness(30%);
+  height: 90%;
+}
+
 .bg-clones::before {
   content: "";
   background: url("/public/img/bg_clones.jpeg") center/cover no-repeat;
@@ -557,6 +568,7 @@ button:not(.menu-btn):hover:before,
   line-height: 26px;
   width: 80%;
   margin: auto;
+  text-align: left;
 }
 
 .main-section {
@@ -1015,6 +1027,40 @@ button:not(.menu-btn):hover:before,
   background-color: #175859;
 }
 
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding-top: 20;
+  margin: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 33.3%;
+  padding: 24px;
+}
+
+.card:nth-child(2n) {
+  background-color: #d3d3d3;
+}
+
+.card-icon {
+  font-size: 24px;
+}
+
+.card-title {
+  margin-bottom: 12px;
+}
+
+.card-desc {
+  font-size: 12px;
+}
+
 .w-100 {
   width: 100%;
 }
@@ -1029,6 +1075,53 @@ button:not(.menu-btn):hover:before,
 
 .fade-in {
   opacity: 1;
+}
+
+/* CSS for Contact Form */
+#contact-form {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#contact-form input[type=text],
+#contact-form input[type=email],
+#contact-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
+#contact-form textarea {
+  resize: vertical;
+}
+
+#contact-form button[type=submit] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #32938b;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#contact-form button[type=submit]:hover {
+  background-color: #175859;
+}
+
+#contact-form input[type=text]:focus,
+#contact-form input[type=email]:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #32938b;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1119,13 +1212,12 @@ button:not(.menu-btn):hover:before,
     padding: 18px 0px;
   }
   .hero-title {
-    font-size: 54px;
+    font-size: 50px;
     padding-top: 12px;
   }
   .hero-desc {
     font-size: 14px;
     padding: 32px 0 72px;
-    width: 100%;
     text-align: left;
   }
   .products-container.grid-4 {
@@ -1217,8 +1309,25 @@ button:not(.menu-btn):hover:before,
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
   }
+  .card {
+    width: 100%;
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 16px;
+  }
+  .card-icon {
+    font-size: 24px;
+  }
+  .card-desc {
+    font-size: 12px;
+  }
 }
-@media only screen and (max-width: 768px) and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   .hero-desc {
     font-size: 12px;
     line-height: 20px;

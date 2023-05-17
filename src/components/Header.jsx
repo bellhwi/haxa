@@ -10,7 +10,7 @@ function Header({ page, title, desc, btnPrimaryText, btnSecondaryText }) {
     const headerElement = document.querySelector('.header')
 
     // Show different height of header screen per pages
-    page == 'home'
+    page == 'home' || 'about'
       ? (headerElement.style.minHeight = `${
           document.documentElement.clientHeight * 0.9
         }px`)

@@ -40,6 +40,7 @@ const headerContents = [
     desc: 'We are committed to provide high-quality genetics. Our mission is to offer genuine representations of smell and flavor with the best cannabis.',
     btnSecondaryText: 'VIEW REAL-TIME INVENTORY',
   },
+
   {
     page: 'clones',
     title: 'CLONES',
@@ -61,9 +62,31 @@ const headerContents = [
   {
     page: 'coming',
     title: 'COMING SOON',
-    desc: 'We are currently preparing new genetics for the next generation.',
+    desc: "We're thrilled to announce that Haxa is in the process of expanding our product offerings and services to better meet the needs of our customers. Soon, we will be introducing new strains, edibles, tinctures, and topicals, all carefully selected for their quality, potency, and flavor. In addition, we will be launching a range of educational resources and community events designed to help people learn more about cannabis and its potential benefits. Our team is working hard to bring you the best possible experience, from our welcoming and knowledgeable staff to our state-of-the-art facilities and cutting-edge technology. So stay tuned for updates, follow us on social media, and get ready to discover a whole new world of cannabis with Haxa!",
     btnPrimaryText: 'VIEW PRODUCTS',
   },
+  {
+    page: 'about',
+    title: (
+      <>
+        Elevating <span>Cannabis</span> Experience
+      </>
+    ),
+    desc: "At Haxa, we are passionate about the potential of cannabis to enhance people's lives. We believe that cannabis can be a powerful tool for wellness, relaxation, and creativity, and we are dedicated to providing our customers with the highest-quality products and services to help them explore the benefits of this incredible plant. Whether you're a seasoned cannabis enthusiast or a curious beginner, our knowledgeable staff is here to guide you and answer any questions you may have. Join us on a journey of discovery and transformation, and let's elevate the cannabis experience together.",
+  },
 ]
-
-export { homeContents, headerContents }
+const aboutContents = [
+  {
+    title: 'Quality',
+    desc: 'We believe in providing our customers with only the highest-quality cannabis products. From our sourcing and cultivation practices to our rigorous testing standards, we are committed to delivering a premium experience that exceeds expectations.',
+  },
+  {
+    title: 'Education',
+    desc: 'We are dedicated to educating our customers about cannabis and its potential benefits. We believe that knowledge is power, and we strive to provide accurate, up-to-date information that empowers people to make informed decisions about their cannabis use.',
+  },
+  {
+    title: 'Inclusivity',
+    desc: 'We believe that everyone should have access to the benefits of cannabis, regardless of their background or experience. We are committed to creating a welcoming environment where all people feel safe and supported in exploring the potential of this incredible plant.',
+  },
+]
+export { homeContents, headerContents, aboutContents }

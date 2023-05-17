@@ -1,7 +1,7 @@
 import { FaInstagram, FaAngleUp } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { getAuth } from 'firebase/auth'
-import { adminUid, testerUid } from '../items'
+import { adminUid } from '../items'
 import * as Scroll from 'react-scroll'
 
 function Footer({ color, padding }) {
@@ -27,10 +27,7 @@ function Footer({ color, padding }) {
         style={{ color: color }}
         onClick={() => {
           const auth = getAuth()
-          if (
-            auth.currentUser.uid == adminUid ||
-            auth.currentUser.uid == testerUid
-          ) {
+          if (auth.currentUser.uid == adminUid) {
             navigate('/admin')
           }
         }}

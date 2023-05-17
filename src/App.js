@@ -8,6 +8,7 @@ import { setData, setLastUpdatedTime } from './store'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Home from './pages/Home'
+import About from './pages/About'
 import Clones from './pages/Clones'
 import Premiums from './pages/Premiums'
 import Seeds from './pages/Seeds'
@@ -72,6 +73,7 @@ function App() {
         <Route path='/' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/home' element={<Home />} />
+        <Route path='/about' element={<About />} />
         <Route path='/clones' element={<Clones />} />
         <Route path='/premiums' element={<Premiums />} />
         <Route path='/seeds' element={<Seeds />} />
