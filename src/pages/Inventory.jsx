@@ -22,8 +22,6 @@ function Inventory() {
     } else {
       navigate('/')
     }
-
-    console.log(filteredData)
   }, [])
 
   return (

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {
   getAuth,
@@ -11,16 +11,34 @@ function Login() {
   const auth = getAuth()
   const navigate = useNavigate()
   const [loginFailed, setLoginFailed] = useState(false)
+  const modalRef = useRef(null)
+  const [modalOpen, setModalOpen] = useState(true)
+  const closeModal = () => {
+    setModalOpen(false)
+  }
+  const leavePage = () => {
+    window.location.href = 'https://www.google.com/'
+  }
 
   useEffect(() => {
     document.title = 'Login - HAXA'
-
     if (auth.currentUser != null) {
       navigate('/home')
     }
   }, [])
   return (
     <div className='bg-signup'>
+      {/* Verify age modal */}
+      {modalOpen && (
+        <div className='modal-overlay'>
+          <div className='modal-container' ref={modalRef}>
+            <h2>Are you 21+? </h2>
+            <div onClick={closeModal}>YES</div>
+            <div onClick={leavePage}>NO</div>
+          </div>
+        </div>
+      )}
+
       <div className='form-container'>
         <div>
           <div className='navbar-logo'>

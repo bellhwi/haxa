@@ -59,51 +59,51 @@ function About() {
     <div className='bg-about'>
       <div className='container'>
         <Header title={title} desc={desc} />
-      </div>
-      <div className='main-section'>
-        <h4 className='main-title'>About Us</h4>
-        <p className='main-desc'>
-          We offer the best cannabis experience with our services.
-        </p>
-        <div className='card-container'>
-          {aboutContents.map((content, index) => (
-            <Card
-              key={index}
-              title={content.title}
-              desc={content.desc}
-              icon={icons[index]}
-            ></Card>
-          ))}
+        <div className='main-section'>
+          <h4 className='main-title'>About Us</h4>
+          <p className='main-desc' style={{ padding: '24px 0px 0px' }}>
+            We offer the best cannabis experience with our services.
+          </p>
+          <div className='card-container'>
+            {aboutContents.map((content, index) => (
+              <Card
+                key={index}
+                title={content.title}
+                desc={content.desc}
+                icon={icons[index]}
+              ></Card>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className='main-section'>
-        <h4 className='main-title'>Contact Us</h4>
-        <p className='main-desc'>
-          We value your feedback and are here to assist you.
-        </p>
-        <form id='contact-form' ref={contactFormRef}>
-          <input
-            type='text'
-            id='nameInput'
-            placeholder='Your Name'
-            required
-            ref={nameInputRef}
-          />
-          <input
-            type='email'
-            id='emailInput'
-            placeholder='Your Email'
-            required
-            ref={emailInputRef}
-          />
-          <textarea
-            id='messageInput'
-            placeholder='Your Message'
-            required
-            ref={messageInputRef}
-          ></textarea>
-          <button type='submit'>Submit</button>
-        </form>
+        <div className='main-section'>
+          <h4 className='main-title'>Contact Us</h4>
+          <p className='main-desc'>
+            We value your feedback and are here to assist you.
+          </p>
+          <form class='contact-form' ref={contactFormRef}>
+            <input
+              type='text'
+              id='nameInput'
+              placeholder='Your Name'
+              required
+              ref={nameInputRef}
+            />
+            <input
+              type='email'
+              id='emailInput'
+              placeholder='Your Email'
+              required
+              ref={emailInputRef}
+            />
+            <textarea
+              id='messageInput'
+              placeholder='Your Message'
+              required
+              ref={messageInputRef}
+            ></textarea>
+            <button type='submit'>Submit</button>
+          </form>
+        </div>
       </div>
       <Footer />
     </div>

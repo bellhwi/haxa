@@ -198,14 +198,12 @@ function Signup() {
           <button
             className='form-button btn-secondary'
             onClick={() => {
-              console.log(validationStatus)
               if (
                 validationStatus.username &&
                 validationStatus.email &&
                 validationStatus.password &&
                 validationStatus.pwconfirm
               ) {
-                console.log('all correct')
                 const auth = getAuth()
                 createUserWithEmailAndPassword(
                   auth,
