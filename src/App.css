@@ -1126,6 +1126,7 @@ button:not(.menu-btn):hover:before,
   width: 80%;
   margin: auto;
   display: flex;
+  max-width: 1024px;
 }
 
 .subscribe-section h2 {
