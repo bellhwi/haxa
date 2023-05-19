@@ -552,7 +552,7 @@ button:not(.menu-btn),
 }
 
 .products {
-  padding: 36px 0px;
+  padding: 186px 0px 0px;
 }
 
 .products-top {
@@ -933,8 +933,8 @@ button:not(.menu-btn),
   align-items: center;
   justify-content: center;
   width: 80%;
-  padding-top: 20;
   margin: auto;
+  margin-top: 20px;
 }
 
 .card {
@@ -986,7 +986,7 @@ button:not(.menu-btn),
 /* CSS for Contact Form */
 .contact-form {
   width: 100%;
-  max-width: 1200px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
@@ -1131,6 +1131,10 @@ button:not(.menu-btn),
 .subscribe-img {
   display: block;
   width: 50%;
+}
+
+.about-desc {
+  padding: 16px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1359,7 +1363,7 @@ button:not(.menu-btn),
     align-items: center;
     width: 100%;
     margin: auto;
-    padding: 16px;
+    padding-top: 0px;
   }
 
   .card-icon {
@@ -1372,6 +1376,10 @@ button:not(.menu-btn),
 }
 
 @media only screen and (max-width: 576px) {
+  .products {
+    padding: 136px 0px 0px;
+  }
+
   .hero-desc {
     font-size: 12px;
     line-height: 20px;

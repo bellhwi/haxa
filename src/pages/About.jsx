@@ -61,7 +61,7 @@ function About() {
         <Header title={title} desc={desc} />
         <div className='main-section'>
           <h4 className='main-title'>About Us</h4>
-          <p className='main-desc' style={{ padding: '24px 0px 0px' }}>
+          <p className='about-desc'>
             We offer the best cannabis experience with our services.
           </p>
           <div className='card-container'>

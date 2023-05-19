@@ -72,7 +72,7 @@ const headerContents = [
         Elevating <span>Cannabis</span> Experience
       </>
     ),
-    desc: "At Haxa, we are passionate about the potential of cannabis to enhance people's lives. We believe that cannabis can be a powerful tool for wellness, relaxation, and creativity, and we are dedicated to providing our customers with the highest-quality products and services to help them explore the benefits of this incredible plant. Whether you're a seasoned cannabis enthusiast or a curious beginner, our knowledgeable staff is here to guide you and answer any questions you may have. Join us on a journey of discovery and transformation, and let's elevate the cannabis experience together.",
+    desc: "At Haxa, we are passionate about the potential of cannabis to enhance people's lives. We believe that cannabis can be a powerful tool for wellness, relaxation, and creativity, and we are dedicated to providing our customers with the highest-quality products and services to help them explore the benefits of this incredible plant.",
   },
 ]
 const aboutContents = [
